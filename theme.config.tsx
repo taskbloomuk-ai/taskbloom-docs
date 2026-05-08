@@ -16,9 +16,7 @@ export default {
       TaskBloom
     </span>
   ),
-  project: {
-    link: 'https://github.com/taskbloom/taskbloom-docs'
-  },
+  project: {},
   sidebar: {
     defaultMenuCollapseLevel: 1,
     toggleButton: true,
