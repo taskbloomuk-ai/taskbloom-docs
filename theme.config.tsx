@@ -30,7 +30,7 @@ export default {
   },
   darkMode: true,
   nextThemes: {
-    defaultTheme: 'light'
+    defaultTheme: 'system'
   },
   search: {
     placeholder: 'Search documentation...'
