@@ -20,8 +20,8 @@ export default {
   },
   footer: {
     text: (
-      <div style={{ textAlign: 'center', fontSize: '0.75rem', color: '#94A3B8', padding: '0.75rem 0' }}>
-        © 2026 TaskBloom ·{' '}
+      <div style={{ textAlign: 'center', fontSize: '0.7rem', color: '#94A3B8' }}>
+        © {new Date().getFullYear()} TaskBloom ·{' '}
         <a href="https://taskbloom.co.uk" style={{ color: '#3B82F6' }}>taskbloom.co.uk</a>
         {' · '}
         <a href="mailto:support@taskbloom.co.uk" style={{ color: '#3B82F6' }}>support@taskbloom.co.uk</a>

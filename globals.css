@@ -229,3 +229,8 @@ html.dark body {
 .dark .nextra-navbar {
   border-color: #1E293B !important;
 }
+
+footer [class*="nx-py-12"] {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
