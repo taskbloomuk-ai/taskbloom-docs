@@ -1,104 +1,149 @@
-# Wallet & Financial Systems
+# Wallet & Earnings
 
-Understand how money flows through the TaskBloom platform.
-
----
-
-## Wallet Overview
-
-The TaskBloom wallet system handles all monetary transactions on the platform.
-
-### Wallet Types
-
-| User Type | Wallet Location | Purpose |
-|-----------|-----------------|----------|
-| Worker | `/wallet` | Task earnings, referrals, payouts |
-| Advertiser | `/advertiser/billing` | Campaign funding, withdrawals |
-| Reseller | `/reseller/wallet` | Voucher purchases, sales |
+Manage your earnings, track transactions, and request payouts.
 
 ---
 
-## Transaction Types
+## Your Wallet
 
-### Worker Transactions
-
-| Type | Description | Direction |
-|------|-------------|-----------|
-| `task_earning` | Payment for approved task | + (credit) |
-| `referral_commission` | Earnings from referral's tasks | + (credit) |
-| `payout` | Withdrawal request | - (debit) |
-| `bonus` | Platform bonuses | + (credit) |
-
-### Advertiser Transactions
-
-| Type | Description | Direction |
-|------|-------------|-----------|
-| `deposit` | Adding funds | + (credit) |
-| `campaign_spend` | Task payments | - (debit) |
-| `refund` | Unused budget returned | + (credit) |
-
----
-
-## Payout Process
+Your wallet is where all earnings are stored. You can view it at `/wallet` (for workers) or `/advertiser/billing` (for advertisers).
 
 ### For Workers
 
-**Minimum Payout:** $10.00
-**Fees:** 2.9% + $0.30 per transaction
-**Processing:** 72-hour hold period
+**URL:** `/wallet`
 
-**Steps:**
-1. Navigate to `/payout`
-2. Enter amount (must be ≥ $10.00)
-3. Select payment method (PayPal, Stripe, Wise, Crypto)
-4. Enter payment email/address
-5. Submit payout request
-6. Wait 72-hour hold period
-7. Receive funds (minus fees)
+| Balance Type | Description |
+|-------------|-------------|
+| **Wallet Balance** | Total available for withdrawal |
+| **Task Earnings** | Money earned from completed tasks |
+| **Referral Earnings** | Commissions from referrals |
+| **Total Earned** | All-time earnings (task + referral) |
+| **Pending Payouts** | Withdrawals being processed |
 
----
-
-## Voucher Economics
-
-### Voucher Flow
-
-Advertiser → Generates Vouchers → Worker Uses for Registration → Package Activated
-
-### Voucher Types
-
-| Type | Use Case |
-|------|----------|
-| Registration | New worker signup |
-| Package Upgrade | Higher tier access |
-| Gift | Transfer to another user |
-
----
-
-## Financial Reconciliation
-
-The platform maintains a **dual-entry ledger** system:
-
-1. **User Wallets** - Track individual balances
-2. **Entity Transactions** - Record every movement
-
-### Balance Calculations
-
-**Worker Balance:**
-```
-wallet_balance = task_earnings + referral_earnings - paid_out
-```
-
-**Advertiser Balance:**
-```
-available = total_deposits - campaign_spend
-```
+<div className="card-grid" style={{ margin: '1rem 0' }}>
+  <div className="feature-card" style={{ textAlign: 'center', padding: '1.25rem' }}>
+    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#10B981' }}>+$0.05</div>
+    <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>per TikTok View</div>
+  </div>
+  <div className="feature-card" style={{ textAlign: 'center', padding: '1.25rem' }}>
+    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#10B981' }}>+$0.40</div>
+    <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>per Google Review</div>
+  </div>
+  <div className="feature-card" style={{ textAlign: 'center', padding: '1.25rem' }}>
+    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#10B981' }}>+$0.50</div>
+    <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>per Survey</div>
+  </div>
+  <div className="feature-card" style={{ textAlign: 'center', padding: '1.25rem' }}>
+    <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#10B981' }}>5-12%</div>
+    <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '0.25rem' }}>referral commissions</div>
+  </div>
+</div>
 
 ---
 
-## Troubleshooting
+## Requesting a Payout
 
-> **Issue:** "Insufficient balance"
-> **Solution:** Check transaction history at /transactions for all credits and debits
->
-> **Issue:** "Payout pending for several days"
-> **Solution:** Standard processing time is 72 hours. Contact support if beyond 7 days
+### Step-by-Step
+
+1. Go to **`/payout`**
+2. Enter the amount you want to withdraw
+
+> **Minimum:** $10.00
+
+3. Select your **payment method**:
+   - **PayPal** — Fast and widely available
+   - **Stripe** — Credit card payouts
+   - **Wise** — International bank transfers
+   - **Crypto** — Cryptocurrency
+
+4. Enter your **payment email or address**
+5. Review the **fee** and **net amount**
+6. Click **Submit**
+
+### Fees & Timing
+
+| Detail | Value |
+|--------|-------|
+| **Fee** | 2.9% + $0.30 per transaction |
+| **Processing** | 72-hour hold period |
+| **Minimum withdrawal** | $10.00 |
+
+---
+
+## Transaction History
+
+**URL:** `/transactions`
+
+Every financial movement on TaskBloom is recorded:
+
+| Transaction Type | Description | Effect on Balance |
+|-----------------|-------------|-------------------|
+| **task_earning** | Payment for approved task | + Credit |
+| **referral_commission** | Commission from referral's task | + Credit |
+| **payout_request** | Withdrawal you requested | - Debit |
+| **payout_completed** | Withdrawal processed | - Debit |
+| **bonus** | Platform bonuses or rewards | + Credit |
+
+You can filter transactions by type to quickly find specific entries.
+
+---
+
+## Understanding Your Earning Cap
+
+Each package has a **monthly earning cap**. This is the maximum amount you can earn from tasks in a single month.
+
+| Package | Price | Earning Cap | How It Works |
+|---------|-------|-------------|--------------|
+| **Bronze** | $9.99 | $11.99/month | Cap = 120% of package price |
+| **Silver** | $49.99 | $74.99/month | Cap = 150% of package price |
+| **Gold** | $99.99 | $199.98/month | Cap = 200% of package price |
+| **Platinum** | $499.99 | $1,499.97/month | Cap = 300% of package price |
+| **Diamond** | $999.99 | **Unlimited** | No cap |
+
+> **Example:** As a Bronze member paying $9.99/month, you can earn up to $11.99 from tasks this month. Once you hit this limit, new tasks won't be available until the 1st of next month — or until you upgrade.
+
+---
+
+## For Advertisers
+
+**URL:** `/advertiser/billing`
+
+Advertisers have a separate wallet for campaign funding:
+
+| Action | How To |
+|--------|--------|
+| **Deposit funds** | `/advertiser/billing` → Deposit |
+| **Withdraw funds** | `/advertiser/billing` → Withdraw |
+| **View spending** | Check campaign analytics |
+| **Refund unused budget** | Automatically available for withdrawal |
+
+---
+
+## For Resellers
+
+**URL:** `/reseller/wallet`
+
+Resellers manage their voucher business wallet:
+
+| Action | How To |
+|--------|--------|
+| **Deposit funds** | `/reseller/wallet` → Deposit |
+| **Purchase vouchers** | `/reseller/orders/purchase` |
+| **View ledger** | `/reseller/ledger` |
+| **Withdraw profits** | `/reseller/wallet` → Withdraw |
+
+---
+
+## Common Questions
+
+> **Q: When are referral commissions paid?**
+> **A:** Commissions are credited when your referral's task is **approved** by the advertiser.
+
+> **Q: Can I withdraw if my balance is below $10?**
+> **A:** No, the minimum payout is $10.00. Keep completing tasks until you reach this threshold.
+
+> **Q: How do I track my earnings over time?**
+> **A:** Visit `/wallet` to see your 14-day earnings chart, weekly stats, and monthly totals.
+
+> **Q: What happens to my earnings if I cancel my account?**
+> **A:** Contact support to process your remaining balance before account closure.

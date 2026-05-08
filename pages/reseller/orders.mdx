@@ -1,0 +1,61 @@
+# Orders & Purchases
+
+Learn how to purchase voucher batches and track your orders.
+
+---
+
+## Purchasing Vouchers
+
+### Step 1: Navigate to Purchase
+
+Go to `/reseller/orders/purchase`
+
+### Step 2: Select Voucher Type
+
+- **Registration Vouchers** - For new worker signups
+- **Upgrade Vouchers** - For package upgrades
+
+### Step 3: Choose Quantity
+
+Select how many vouchers you want to purchase. Bulk pricing applies:
+- 10-50 vouchers: Standard wholesale price
+- 51-200 vouchers: Volume discount
+- 201+ vouchers: Enterprise pricing
+
+### Step 4: Confirm Purchase
+
+Review the total cost and confirm. Funds are deducted from your reseller wallet immediately.
+
+---
+
+## Order History
+
+**URL:** `/reseller/orders`
+
+View all your past purchases:
+- **Order ID** - Unique identifier
+- **Voucher Type** - Registration or upgrade
+- **Quantity** - Number of vouchers purchased
+- **Total Cost** - Amount paid
+- **Status** - Completed, processing, failed
+- **Date** - Purchase timestamp
+
+---
+
+## Order Statuses
+
+| Status | Description |
+|--------|-------------|
+| **Completed** | Vouchers added to inventory |
+| **Processing** | Awaiting fulfillment |
+| **Failed** | Payment issue, contact support |
+
+---
+
+## Troubleshooting
+
+> **Issue:** "Insufficient wallet balance"
+> **Solution:** Deposit funds at `/reseller/wallet`
+
+> **Issue:** "Order failed to process"
+> **Solution:** Contact support with the order details

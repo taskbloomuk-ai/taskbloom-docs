@@ -3,17 +3,15 @@
   "getting-started": {
     "title": "Getting Started"
   },
-  "advertiser": {
-    "title": "Advertiser Guide"
-  },
   "worker": {
-    "title": "Worker Guide"
+    "title": "👤 Worker Guide"
   },
-  "admin": {
-    "title": "Admin Guide"
+  "advertiser": {
+    "title": "📈 Advertiser Guide"
   },
-  "wallet": "Wallet & Financial",
-  "security": "Security & Compliance",
-  "troubleshooting": "Troubleshooting",
-  "developer": "Developer Docs"
+  "reseller": {
+    "title": "🤝 Reseller Guide"
+  },
+  "wallet": "💰 Wallet & Earnings",
+  "troubleshooting": "❓ Help & Support"
 }
