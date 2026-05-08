@@ -1,4 +1,9 @@
 export default {
+  head: (
+    <>
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </>
+  ),
   logo: (
     <span style={{
       fontWeight: 800,
