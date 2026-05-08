@@ -1,0 +1,87 @@
+# Registration Guide
+
+This guide covers account creation for all user types on TaskBloom.
+
+## Registration by Role
+
+### Worker Registration
+
+**URL:** `/register`
+
+**Requirements:**
+- Valid email address
+- Password (minimum 8 characters)
+- Full name
+- **Valid voucher code** (REQUIRED - obtained from advertiser or promotion)
+- Country selection (US, CA, GB, AU, DE, FR, JP, IN, BR, MX)
+
+**Process:**
+1. Navigate to `/register`
+2. Enter your email address
+3. Create a password (minimum 8 characters)
+4. Confirm your password
+5. Enter your full name
+6. Enter a referral code (optional)
+7. Enter a voucher code (REQUIRED)
+8. Select your country
+9. Click "Create Account"
+
+<div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-4">
+<p><strong>Important:</strong> A valid voucher code is required to complete registration. Vouchers can be obtained from advertisers or through promotions.</p>
+</div>
+
+### Advertiser Registration
+
+**URL:** `/advertiser/register`
+
+**Requirements:**
+- Business email
+- Password (minimum 8 characters)
+- Company name
+- Contact information
+
+### Reseller Registration
+
+**URL:** `/reseller/register`
+
+Reseller accounts typically require admin approval before activation.
+
+---
+
+## Email Verification
+
+Email verification is **optional** on TaskBloom. Users can access the platform immediately after registration.
+
+---
+
+## Referral Codes
+
+During registration, you can enter a referral code to:
+- Link your account to an existing user
+- Enable the referrer to earn commissions on your activity
+
+**Finding your referral code:**
+- Log in and navigate to `/referrals`
+- Your code and shareable link are displayed there
+
+---
+
+## Registration Errors
+
+| Error Message | Solution |
+|--------------|----------|
+| "A valid voucher code is required to register" | Obtain a valid voucher from advertiser or promotion |
+| "Email already registered" | Use a different email or log in with existing account |
+| "Password must be at least 8 characters" | Choose a longer password |
+| "Passwords do not match" | Re-enter password exactly in both fields |
+| "All fields are required" | Fill in all required fields |
+
+---
+
+## After Registration
+
+| Role | Landing Page | Next Actions |
+|------|-------------|-------------|
+| Worker | `/tasks` | Browse available tasks, get first task |
+| Advertiser | `/advertiser/dashboard` | Fund wallet, create first campaign |
+| Admin | `/admin/dashboard` | Review platform status |

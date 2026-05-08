@@ -1,0 +1,132 @@
+# Developer Documentation
+
+Technical overview of the TaskBloom platform architecture.
+
+---
+
+## Project Structure
+
+```
+taskbloom/
+├── app/
+│   ├── Controllers/       # Request handlers (58 files)
+│   ├── Models/           # Database models (32 files)
+│   ├── Services/         # Business logic (26 files)
+│   ├── Views/            # UI templates (100+ files)
+│   ├── Middleware/       # Auth, rate limiting
+│   ├── Libraries/        # Utilities
+│   └── Events/           # Event handlers
+├── config/
+│   ├── routes.php        # Route definitions (200+ routes)
+│   ├── config.php       # Application configuration
+│   └── database.php     # Database connection
+├── core/
+│   ├── Router.php        # Request routing
+│   ├── Controller.php    # Base controller
+│   ├── Model.php         # Base model
+│   └── Session.php       # Session management
+├── migrations/           # 34 database migrations
+└── public/              # Static assets
+```
+
+---
+
+## Core Technologies
+
+| Component | Technology |
+|----------|------------|
+| Backend | Raw PHP (no framework) |
+| Database | MySQL/MariaDB |
+| Frontend | Vanilla JS + TailwindCSS |
+| Server | Apache (XAMPP) |
+
+---
+
+## Architecture
+
+### MVC Pattern
+```
+Request → Router → Controller → Service → Model → Database
+                     ↓
+                  View (HTML)
+```
+
+### Service Layer
+Business logic lives in `app/Services/`:
+- **AuthService** - Authentication
+- **TaskService** - Task operations
+- **WalletService** - Financial transactions
+- **VoucherService** - Voucher management
+- **FraudDetectionService** - Security
+- **CampaignService** - Campaign operations
+
+### Database Layer
+- Custom `Database` singleton (not ORM)
+- PDO for all queries
+- Prepared statements throughout
+- Transaction support
+
+---
+
+## Permission System
+
+27 base permissions + 7 extended permissions.
+
+### Permission Categories
+
+| Category | Permissions |
+|----------|-------------|
+| User Management | manage_users, view_users, edit_users, delete_users |
+| Task Management | manage_tasks, approve_tasks, reject_tasks |
+| Campaign | manage_campaigns, create_campaign, edit_campaign, delete_campaign |
+| Billing | manage_billing, process_payouts, view_payouts |
+| Analytics | view_analytics, export_reports |
+
+---
+
+## Key Database Tables
+
+| Table | Purpose |
+|-------|---------|
+| `users` | All user accounts |
+| `roles` | RBAC roles |
+| `permissions` | RBAC permissions |
+| `campaigns` | Advertiser campaigns |
+| `task_assignments` | User task assignments |
+| `vouchers` | Voucher codes |
+| `entity_transactions` | Unified transaction log |
+| `packages` | Subscription packages |
+| `user_packages` | User package assignments |
+
+---
+
+## Core Configuration
+
+Key settings from `config/config.php`:
+
+```
+min_payout: $10.00
+payout_fee_percent: 2.9%
+payout_fee_fixed: $0.30
+referral level1: 5%
+referral level2: 3%
+referral level3: 1%
+task expiry: 48 hours
+max_daily_limit: 50 tasks
+```
+
+---
+
+## Extension Points
+
+### Adding New Task Types
+1. Add to `task_types` table
+2. Define earning range
+3. Set proof type (screenshot/link/none)
+4. Configure in campaign wizard
+
+### Adding New Permissions
+1. Add to `permissions` table
+2. Update `role_permissions`
+3. Add to route definitions
+4. Check in controller

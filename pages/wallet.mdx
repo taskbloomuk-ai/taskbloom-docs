@@ -1,0 +1,108 @@
+# Wallet & Financial Systems
+
+Understand how money flows through the TaskBloom platform.
+
+---
+
+## Wallet Overview
+
+The TaskBloom wallet system handles all monetary transactions on the platform.
+
+### Wallet Types
+
+| User Type | Wallet Location | Purpose |
+|-----------|-----------------|----------|
+| Worker | `/wallet` | Task earnings, referrals, payouts |
+| Advertiser | `/advertiser/billing` | Campaign funding, withdrawals |
+| Reseller | `/reseller/wallet` | Voucher purchases, sales |
+
+---
+
+## Transaction Types
+
+### Worker Transactions
+
+| Type | Description | Direction |
+|------|-------------|-----------|
+| `task_earning` | Payment for approved task | + (credit) |
+| `referral_commission` | Earnings from referral's tasks | + (credit) |
+| `payout` | Withdrawal request | - (debit) |
+| `bonus` | Platform bonuses | + (credit) |
+
+### Advertiser Transactions
+
+| Type | Description | Direction |
+|------|-------------|-----------|
+| `deposit` | Adding funds | + (credit) |
+| `campaign_spend` | Task payments | - (debit) |
+| `refund` | Unused budget returned | + (credit) |
+
+---
+
+## Payout Process
+
+### For Workers
+
+**Minimum Payout:** $10.00
+**Fees:** 2.9% + $0.30 per transaction
+**Processing:** 72-hour hold period
+
+**Steps:**
+1. Navigate to `/payout`
+2. Enter amount (must be ≥ $10.00)
+3. Select payment method (PayPal, Stripe, Wise, Crypto)
+4. Enter payment email/address
+5. Submit payout request
+6. Wait 72-hour hold period
+7. Receive funds (minus fees)
+
+---
+
+## Voucher Economics
+
+### Voucher Flow
+
+Advertiser → Generates Vouchers → Worker Uses for Registration → Package Activated
+
+### Voucher Types
+
+| Type | Use Case |
+|------|----------|
+| Registration | New worker signup |
+| Package Upgrade | Higher tier access |
+| Gift | Transfer to another user |
+
+---
+
+## Financial Reconciliation
+
+The platform maintains a **dual-entry ledger** system:
+
+1. **User Wallets** - Track individual balances
+2. **Entity Transactions** - Record every movement
+
+### Balance Calculations
+
+**Worker Balance:**
+```
+wallet_balance = task_earnings + referral_earnings - paid_out
+```
+
+**Advertiser Balance:**
+```
+available = total_deposits - campaign_spend
+```
+
+---
+
+## Troubleshooting
+
+<div className="bg-red-50 border-l-4 border-red-500 p-4 my-4">
+<p><strong>Issue:</strong> "Insufficient balance"</p>
+<p><strong>Solution:</strong> Check transaction history at /transactions for all credits and debits</p>
+</div>
+
+<div className="bg-red-50 border-l-4 border-red-500 p-4 my-4">
+<p><strong>Issue:</strong> "Payout pending for several days"</p>
+<p><strong>Solution:</strong> Standard processing time is 72 hours. Contact support if beyond 7 days</p>
+</div>

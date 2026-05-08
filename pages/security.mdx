@@ -1,0 +1,104 @@
+# Security & Compliance
+
+TaskBloom implements comprehensive security measures to protect users and maintain platform integrity.
+
+---
+
+## Fraud Prevention
+
+### Detection Systems
+
+| System | Function |
+|--------|----------|
+| **Device Fingerprinting** | Identifies suspicious devices |
+| **IP Monitoring** | Detects VPN/proxy usage |
+| **Behavioral Analysis** | Flags unusual patterns |
+| **Velocity Checks** | Monitors rapid submissions |
+| **GeoIP Validation** | Confirms location authenticity |
+
+### Fraud Triggers
+
+Activities that may trigger fraud review:
+- Multiple accounts from same IP
+- Suspicious registration patterns
+- Rapid task completion
+- High rejection rate
+- VPN/proxy detected
+
+### Consequences
+
+| Severity | Action |
+|----------|--------|
+| Low | Manual review required |
+| Medium | Account suspension |
+| High | Permanent ban |
+
+---
+
+## Account Security
+
+### Authentication
+
+- **Password Requirements:** Minimum 8 characters
+- **Session Duration:** 2 hours inactivity timeout
+- **Session Regeneration:** On login and periodically
+
+### Security Features
+
+| Feature | Implementation |
+|---------|----------------|
+| CSRF Protection | Token-based form validation |
+| SQL Injection | Prepared statements throughout |
+| XSS Prevention | Input sanitization |
+| Rate Limiting | Per-action, per-user limits |
+
+---
+
+## Moderation Policies
+
+### Prohibited Activities
+
+1. **Spam** - Mass unnecessary submissions
+2. **Fake Engagement** - Bot-generated activity
+3. **Account Sharing** - Multiple users on one account
+4. **Voucher Fraud** - Invalid/duplicate vouchers
+5. **Collusion** - Worker-advertiser schemes
+
+### Enforcement
+
+| Violation | Penalty |
+|-----------|---------|
+| First offense | Warning |
+| Second offense | Temporary suspension |
+| Third offense | Permanent ban |
+
+---
+
+## Data Privacy
+
+### Data Collected
+
+| Data Type | Purpose |
+|-----------|----------|
+| Email/Name | Account identification |
+| IP Address | Security & fraud prevention |
+| Device Fingerprint | Fraud detection |
+| Activity History | Performance tracking |
+| Transaction Data | Financial records |
+
+### User Rights
+
+- View personal data
+- Request data export
+- Delete account (via support)
+- Update profile information
+
+---
+
+## Reporting Issues
+
+To report security concerns or violations:
+
+**Email:** security@taskbloom.co.uk
+
+Include description of issue, evidence/screenshots, and your role.

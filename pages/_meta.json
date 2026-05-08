@@ -1,0 +1,19 @@
+{
+  "index": "Welcome",
+  "getting-started": {
+    "title": "Getting Started"
+  },
+  "advertiser": {
+    "title": "Advertiser Guide"
+  },
+  "worker": {
+    "title": "Worker Guide"
+  },
+  "admin": {
+    "title": "Admin Guide"
+  },
+  "wallet": "Wallet & Financial",
+  "security": "Security & Compliance",
+  "troubleshooting": "Troubleshooting",
+  "developer": "Developer Docs"
+}
