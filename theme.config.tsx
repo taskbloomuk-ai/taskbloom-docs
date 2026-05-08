@@ -1,5 +1,3 @@
-import './globals.css'
-
 export default {
   logo: (
     <span style={{
@@ -22,13 +20,11 @@ export default {
   },
   footer: {
     text: (
-      <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#94A3B8', padding: '1rem 0' }}>
-        <p>© {new Date().getFullYear()} TaskBloom. All rights reserved.</p>
-        <p style={{ marginTop: '0.25rem' }}>
-          <a href="https://taskbloom.co.uk" style={{ color: '#3B82F6' }}>taskbloom.co.uk</a>
-          {' · '}
-          <a href="mailto:support@taskbloom.co.uk" style={{ color: '#3B82F6' }}>support@taskbloom.co.uk</a>
-        </p>
+      <div style={{ textAlign: 'center', fontSize: '0.75rem', color: '#94A3B8', padding: '0.75rem 0' }}>
+        © 2026 TaskBloom ·{' '}
+        <a href="https://taskbloom.co.uk" style={{ color: '#3B82F6' }}>taskbloom.co.uk</a>
+        {' · '}
+        <a href="mailto:support@taskbloom.co.uk" style={{ color: '#3B82F6' }}>support@taskbloom.co.uk</a>
       </div>
     )
   },
@@ -37,12 +33,7 @@ export default {
     defaultTheme: 'light'
   },
   search: {
-    placeholder: 'Search documentation...',
-    emptyResult: (
-      <div style={{ padding: '1.5rem', textAlign: 'center', color: '#94A3B8', fontSize: '0.9rem' }}>
-        No results found. Try different keywords.
-      </div>
-    )
+    placeholder: 'Search documentation...'
   },
   navbar: {
     extraContent: (
@@ -51,15 +42,7 @@ export default {
           href="https://taskbloom.co.uk"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            padding: '0.375rem 0.75rem',
-            borderRadius: '0.5rem',
-            fontWeight: 500,
-            color: '#64748B',
-            transition: 'all 0.15s ease'
-          }}
-          onMouseOver={e => { e.currentTarget.style.color = '#3B82F6'; e.currentTarget.style.background = '#EFF6FF' }}
-          onMouseOut={e => { e.currentTarget.style.color = '#64748B'; e.currentTarget.style.background = 'transparent' }}
+          style={{ padding: '0.375rem 0.75rem', borderRadius: '0.5rem', fontWeight: 500, color: '#64748B' }}
         >
           Main Site →
         </a>
@@ -67,15 +50,7 @@ export default {
           href="https://task-rewards.com"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            padding: '0.375rem 0.75rem',
-            borderRadius: '0.5rem',
-            fontWeight: 500,
-            color: '#64748B',
-            transition: 'all 0.15s ease'
-          }}
-          onMouseOver={e => { e.currentTarget.style.color = '#3B82F6'; e.currentTarget.style.background = '#EFF6FF' }}
-          onMouseOut={e => { e.currentTarget.style.color = '#64748B'; e.currentTarget.style.background = 'transparent' }}
+          style={{ padding: '0.375rem 0.75rem', borderRadius: '0.5rem', fontWeight: 500, color: '#64748B' }}
         >
           Platform →
         </a>
@@ -87,7 +62,4 @@ export default {
     title: 'On This Page',
     backToTop: true,
   },
-  primaryHue: 217,
-  primarySaturation: 91,
-  primaryLightness: 59,
 }

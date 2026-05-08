@@ -4,14 +4,14 @@
     "title": "Getting Started"
   },
   "worker": {
-    "title": "👤 Worker Guide"
+    "title": "Worker Guide"
   },
   "advertiser": {
-    "title": "📈 Advertiser Guide"
+    "title": "Advertiser Guide"
   },
   "reseller": {
-    "title": "🤝 Reseller Guide"
+    "title": "Reseller Guide"
   },
-  "wallet": "💰 Wallet & Earnings",
-  "troubleshooting": "❓ Help & Support"
+  "wallet": "Wallet & Earnings",
+  "troubleshooting": "Help & Support"
 }
