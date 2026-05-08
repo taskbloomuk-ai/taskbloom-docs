@@ -62,4 +62,9 @@ export default {
     title: 'On This Page',
     backToTop: true,
   },
+  gitTimestamp: ({ timestamp }) => {
+    const d = new Date(timestamp)
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    return `${months[d.getMonth()]} ${d.getFullYear()}`
+  },
 }
